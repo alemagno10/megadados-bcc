@@ -9,3 +9,4 @@ ALTER TABLE jogador
         REFERENCES equipe (nome)
     ON DELETE CASCADE
     ON UPDATE CASCADE;
+
