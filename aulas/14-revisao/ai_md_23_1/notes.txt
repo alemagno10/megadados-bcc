@@ -1,0 +1,79 @@
+SQL (Structured Query Language) possui várias sublinguagens, cada uma delas com um propósito específico. As duas principais sublinguagens são:
+
+DDL (Data Definition Language): Esta sublinguagem é utilizada para definir a estrutura de um banco de dados. As principais operações em DDL incluem:
+
+CREATE: Usado para criar objetos de banco de dados, como tabelas, índices, visões e procedimentos armazenados.
+ALTER: Usado para alterar a estrutura de objetos de banco de dados existentes, como adicionar ou remover colunas de uma tabela.
+DROP: Usado para excluir objetos de banco de dados, como tabelas ou índices.
+TRUNCATE: Usado para remover todos os registros de uma tabela, mantendo a estrutura da tabela intacta.
+
+DML (Data Manipulation Language): Esta sublinguagem é usada para manipular os dados armazenados no banco de dados. As principais operações em DML incluem:
+
+SELECT: Usado para recuperar dados de uma ou mais tabelas.
+INSERT: Usado para inserir novos registros em uma tabela.
+UPDATE: Usado para modificar registros existentes em uma tabela.
+DELETE: Usado para excluir registros de uma tabela.
+Além dessas, existem outras sublinguagens que são usadas para diferentes propósitos, como:
+
+DCL (Data Control Language): Usado para controlar os aspectos de segurança de um banco de dados, como conceder ou revogar privilégios de acesso.
+TCL (Transaction Control Language): Usado para gerenciar transações em um banco de dados, como confirmar ou reverter transações.
+SCL (Session Control Language): Usado para gerenciar a sessão de conexão do usuário com o banco de dados, como definir parâmetros de sessão.
+Essas sublinguagens são fundamentais para realizar diferentes operações em um banco de dados SQL.
+
+
+Relacionamentos identificadores e não-identificadores são conceitos importantes em modelagem de banco de dados, especialmente quando se trata de design de relacionamentos entre tabelas. Aqui estão as diferenças entre os dois:
+
+Relacionamentos Identificadores:
+
+Características: Neste tipo de relacionamento, a chave primária de uma tabela é usada como chave estrangeira em outra tabela para estabelecer uma relação direta entre elas.
+Propósito: Esses relacionamentos são usados quando há uma clara e única identificação de cada linha em uma tabela e essa identificação é usada para estabelecer a conexão entre as tabelas.
+Exemplo: Por exemplo, em um banco de dados de uma escola, se cada aluno tiver um número de identificação exclusivo (como um número de matrícula), esse número de identificação pode ser usado como chave primária na tabela de alunos e como chave estrangeira em tabelas relacionadas, como a tabela de notas ou a tabela de presença.
+Vantagens: Esses relacionamentos são diretos e eficientes para estabelecer relações entre tabelas. Eles garantem a integridade referencial, o que significa que não é possível referenciar uma linha inexistente em outra tabela.
+Relacionamentos Não-Identificadores:
+
+Características: Neste tipo de relacionamento, uma chave primária composta (ou uma chave candidata) é usada como chave estrangeira em outra tabela para estabelecer uma relação entre elas.
+Propósito: Esses relacionamentos são usados quando não há uma chave única e direta em uma tabela que possa ser usada para estabelecer uma relação com outra tabela.
+Exemplo: Por exemplo, em um sistema de banco de dados para uma loja online, uma tabela de pedidos pode ter uma chave primária composta por um número de pedido e o ID do cliente. O ID do cliente, que é parte da chave primária, pode ser usado como chave estrangeira em outras tabelas, como a tabela de clientes.
+Vantagens: Esses relacionamentos permitem a modelagem de situações onde a identificação direta não é possível ou prática. Eles podem ser úteis quando há complexidades na estrutura de dados e múltiplas chaves são necessárias para identificar uma linha exclusivamente.
+Em resumo, os relacionamentos identificadores são baseados em uma chave primária única, enquanto os relacionamentos não-identificadores envolvem chaves primárias compostas ou outras chaves candidatas para estabelecer a relação entre as tabelas. A escolha entre esses tipos de relacionamentos depende da estrutura e das necessidades específicas do banco de dados que está sendo projetado.
+
+Manipulação de Strings
+CONCAT(string1, string2, ...): Concatena duas ou mais strings.
+LENGTH(string): Retorna o número de bytes de uma string (para UTF-8, pode ser diferente do número de caracteres).
+CHAR_LENGTH(string): Retorna o número de caracteres de uma string, independente do conjunto de caracteres utilizado.
+LOCATE(substring, string, [start]): Retorna a posição da primeira ocorrência de uma substring.
+SUBSTRING(string, start, [length]): Extrai uma parte de uma string.
+UPPER(string) e LOWER(string): Converte strings para maiúscula ou minúscula, respectivamente.
+TRIM(string): Remove espaços ou outros caracteres especificados do início e do fim de uma string.
+REPLACE(string, from_string, to_string): Substitui todas as ocorrências de uma substring dentro de uma string.
+Manipulação de Datas e Horas
+CURDATE() e CURRENT_DATE(): Retorna a data atual.
+CURTIME() e CURRENT_TIME(): Retorna a hora atual.
+NOW() e CURRENT_TIMESTAMP(): Retorna a data e hora atuais.
+DATE_ADD(date, INTERVAL value unit): Adiciona um intervalo de tempo a uma data.
+DATEDIFF(date1, date2): Retorna a diferença entre duas datas em dias.
+YEAR(date), MONTH(date), DAY(date): Extraem o ano, mês, e dia de uma data, respectivamente.
+STR_TO_DATE(string, format): Converte uma string em uma data, de acordo com o formato especificado.
+
+Funções Matemáticas
+ABS(number): Retorna o valor absoluto de um número.
+CEILING(number) ou CEIL(number): Arredonda um número para o menor inteiro maior ou igual ao número.
+FLOOR(number): Arredonda um número para o maior inteiro menor ou igual ao número.
+ROUND(number, decimals): Arredonda um número para um número especificado de casas decimais.
+SQRT(number): Calcula a raiz quadrada de um número.
+RAND(): Retorna um número aleatório entre 0 e 1.
+
+Funções de Agregação
+AVG(column): Retorna a média dos valores em uma coluna.
+COUNT(expression): Conta o número de linhas que satisfazem a expressão.
+MAX(column): Retorna o valor máximo em uma coluna.
+MIN(column): Retorna o valor mínimo em uma coluna.
+SUM(column): Retorna a soma dos valores em uma coluna.
+
+Funções Condicionais
+COALESCE(value1, value2, ...): Retorna o primeiro valor não-nulo na lista.
+IF(condition, value_if_true, value_if_false): Retorna um valor se uma condição for verdadeira, e outro se for falsa.
+CASE: Uma estrutura condicional que permite diferentes resultados baseados em diferentes condições.
+Conversão de Tipos
+CAST(expression AS data_type): Converte um valor de um tipo para outro.
+CONVERT(expr,type): Similar a CAST, mas com sintaxe diferente.
